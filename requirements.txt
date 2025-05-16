@@ -1,0 +1,6 @@
+Flask
+firebase-admin
+deepface
+opencv-python-headless
+numpy
+tf-keras
