@@ -1,3 +1,7 @@
 serviceAccountKey.json
 venv/
 __pycache__/
+reference_temp.jpg
+temp_frame.jpg
+go.mod
+go.sum

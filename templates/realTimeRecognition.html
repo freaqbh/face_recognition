@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Face Stream</title>
+</head>
+<body>
+    <h2>Real-Time Face Matching</h2>
+    <video id="video" width="320" height="240" autoplay></video>
+    <button id="start">Start Stream</button>
+    <button id="stop">Stop Stream</button>
+    <button onclick="triggerMatch()">Face Match</button>
+
+    <p>Upload Reference Image:</p>
+    <input type="file" id="uploadRef" accept="image/*" >
+    <h3>Preview:</h3>
+    <img id="preview" alt="Uploaded Image" style="max-width: 300px; max-height: 300px; display: none;">
+
+    <p id="result"></p>
+
+    <script src="/static/realTimeRecognition.js"></script>
+</body>
+</html>
