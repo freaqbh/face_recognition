@@ -18,14 +18,6 @@ python app.py
 
 setup golang
 ```
-go mod init websocket
-```
-
-```
-go get github.com/gorilla/websocket
-```
-
-```
 go mod tidy
 ```
 
