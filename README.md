@@ -1,7 +1,5 @@
 # Face Reconition with Deepface
 
-pake firebase untuk store picture, real time pake websocket go untuk ngambil per frame lalu cocokan
-
 
 setup python
 ```
