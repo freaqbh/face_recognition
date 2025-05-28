@@ -9,6 +9,10 @@ from firebase_config import db
 
 app = Flask(__name__)
 
+# Daftar model yang didukung (untuk validasi jika diperlukan)
+SUPPORTED_DETECTORS = ['opencv', 'ssd', 'dlib', 'mtcnn', 'retinaface', 'mediapipe', 'yolov8', 'yunet']
+SUPPORTED_MODELS = ['VGG-Face', 'Facenet', 'Facenet512', 'OpenFace', 'DeepFace', 'DeepID', 'ArcFace', 'Dlib', 'SFace']
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -27,6 +31,16 @@ def match_faces():
     ref_img_data = data['ref_img'].split(',')[-1]
     target_img_data = data['target_img'].split(',')[-1]
     user_id = data.get('user_id', 'anonymous')
+    
+    # Ambil nama model dari request, gunakan default jika tidak ada
+    detector = data.get('detector_backend', 'opencv')
+    model = data.get('model_name', 'VGG-Face')
+
+    # (Opsional) Validasi apakah model didukung
+    if detector not in SUPPORTED_DETECTORS:
+        return jsonify({"error": f"Detector model '{detector}' not supported."}), 400
+    if model not in SUPPORTED_MODELS:
+        return jsonify({"error": f"Recognition model '{model}' not supported."}), 400
 
     ref_img_bytes = base64.b64decode(ref_img_data)
     target_img_bytes = base64.b64decode(target_img_data)
@@ -47,15 +61,27 @@ def match_faces():
         cv2.imwrite(ref_file.name, ref_img)
         cv2.imwrite(tgt_file.name, target_img)
 
-        result = DeepFace.verify(ref_file.name, tgt_file.name, enforce_detection=False)
+        # Gunakan model yang dipilih dalam DeepFace.verify
+        result = DeepFace.verify(
+            ref_file.name, 
+            tgt_file.name, 
+            enforce_detection=False,
+            detector_backend=detector, # Gunakan model detektor yang dipilih
+            model_name=model           # Gunakan model pengenalan yang dipilih
+        )
 
         db.collection("face_matches").add({
             "user": user_id,
             "distance": result['distance'],
-            "verified": result['verified']
+            "verified": result['verified'],
+            "detector": detector, # Simpan model yang digunakan
+            "model": model        # Simpan model yang digunakan
         })
 
         return jsonify(result)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
     finally:
         os.remove(ref_file.name)

@@ -27,14 +27,20 @@
       max-width: 500px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem; /* Increased gap */
     }
     label {
       font-weight: 600;
       color: #333;
+      display: block; /* Make label block */
+      margin-bottom: 0.5rem; /* Add margin below label */
     }
-    input[type="file"] {
-      padding: 0.5rem;
+    input[type="file"], select { /* Style select too */
+      padding: 0.75rem; /* Increased padding */
+      width: 100%; /* Full width */
+      box-sizing: border-box; /* Include padding in width */
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
     }
     button {
       padding: 0.75rem;
@@ -63,13 +69,38 @@
 
   <div class="card">
     <div>
-      <label for="ref-input">Upload Reference Image:</label><br />
+      <label for="ref-input">Upload Reference Image:</label>
       <input type="file" accept="image/*" id="ref-input">
     </div>
 
     <div>
-      <label for="target-input">Upload Target Image:</label><br />
+      <label for="target-input">Upload Target Image:</label>
       <input type="file" accept="image/*" id="target-input">
+    </div>
+
+    <div>
+        <label for="detector-model">Choose Detector Model (Cropping):</label>
+        <select id="detector-model">
+            <option value="opencv">OpenCV</option>
+            <option value="ssd">SSD</option>
+            <option value="dlib">Dlib</option>
+            <option value="mtcnn">MTCNN</option>
+            <option value="retinaface">RetinaFace</option>
+            <option value="mediapipe">MediaPipe</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="recognition-model">Choose Recognition Model:</label>
+        <select id="recognition-model">
+            <option value="VGG-Face">VGG-Face</option>
+            <option value="Facenet">Facenet</option>
+            <option value="Facenet512">Facenet512</option>
+            <option value="OpenFace">OpenFace</option>
+            <option value="DeepFace">DeepFace</option>
+            <option value="ArcFace">ArcFace</option>
+            <option value="Dlib">Dlib</option>
+        </select>
     </div>
 
     <button onclick="sendImages()">Match Faces</button>
