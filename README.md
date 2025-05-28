@@ -15,14 +15,4 @@ pip install -r requirements.txt
 python app.py
 ```
 
-setup golang
-```
-go mod tidy
-```
-
-```
-go run main.go
-```
-
-
 # Not Complete!
