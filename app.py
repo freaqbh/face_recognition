@@ -5,17 +5,12 @@ import cv2
 import base64
 import tempfile
 import os
-import logging # Ditambahkan untuk logging
+import logging 
 
-# Konfigurasi logging dasar
 logging.basicConfig(level=logging.INFO)
-
-# Hapus firebase_config jika tidak digunakan secara aktif di sini atau pastikan konfigurasinya benar
-# from firebase_config import db # Jika Anda masih menggunakan Firestore untuk menyimpan hasil
 
 app = Flask(__name__)
 
-# Daftar model yang didukung (untuk validasi jika diperlukan)
 SUPPORTED_DETECTORS = ['opencv', 'ssd', 'dlib', 'mtcnn', 'retinaface', 'mediapipe', 'yolov8', 'yunet']
 SUPPORTED_MODELS = ['VGG-Face', 'Facenet', 'Facenet512', 'OpenFace', 'DeepFace', 'DeepID', 'ArcFace', 'Dlib', 'SFace']
 REFERENCE_IMAGE_PATH = "reference_temp.jpg" # Path gambar referensi
@@ -90,20 +85,6 @@ def match_faces():
             model_name=model
         )
         
-        # Contoh penyimpanan ke Firestore (pastikan 'db' sudah diinisialisasi)
-        # try:
-        #     db.collection("face_matches").add({
-        #         "user": user_id,
-        #         "distance": result.get('distance'),
-        #         "verified": result.get('verified'),
-        #         "detector": detector,
-        #         "model": model,
-        #         "type": "static_match"
-        #     })
-        # except Exception as e:
-        #     app.logger.error(f"Firestore error: {e}")
-
-
         return jsonify(result)
 
     except base64.binascii.Error:
@@ -181,20 +162,7 @@ def realtime_verify():
             detector_backend=detector,
             model_name=model
         )
-        
-        # Contoh penyimpanan ke Firestore (pastikan 'db' sudah diinisialisasi)
-        # try:
-        #     db.collection("face_matches").add({
-        #         "user": "realtime_user", # atau user_id jika ada
-        #         "distance": result.get('distance'),
-        #         "verified": result.get('verified'),
-        #         "detector": detector,
-        #         "model": model,
-        #         "type": "realtime_match"
-        #     })
-        # except Exception as e:
-        #     app.logger.error(f"Firestore error (realtime): {e}")
-
+    
         return jsonify(result)
 
     except base64.binascii.Error:
