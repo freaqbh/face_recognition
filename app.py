@@ -5,13 +5,20 @@ import cv2
 import base64
 import tempfile
 import os
-from firebase_config import db
+import logging # Ditambahkan untuk logging
+
+# Konfigurasi logging dasar
+logging.basicConfig(level=logging.INFO)
+
+# Hapus firebase_config jika tidak digunakan secara aktif di sini atau pastikan konfigurasinya benar
+# from firebase_config import db # Jika Anda masih menggunakan Firestore untuk menyimpan hasil
 
 app = Flask(__name__)
 
 # Daftar model yang didukung (untuk validasi jika diperlukan)
 SUPPORTED_DETECTORS = ['opencv', 'ssd', 'dlib', 'mtcnn', 'retinaface', 'mediapipe', 'yolov8', 'yunet']
 SUPPORTED_MODELS = ['VGG-Face', 'Facenet', 'Facenet512', 'OpenFace', 'DeepFace', 'DeepID', 'ArcFace', 'Dlib', 'SFace']
+REFERENCE_IMAGE_PATH = "reference_temp.jpg" # Path gambar referensi
 
 @app.route("/")
 def index():
@@ -28,64 +35,86 @@ def realtime():
 @app.route("/match", methods=["POST"])
 def match_faces():
     data = request.get_json()
-    ref_img_data = data['ref_img'].split(',')[-1]
-    target_img_data = data['target_img'].split(',')[-1]
+    if not data:
+        return jsonify({"error": "Invalid JSON payload"}), 400
+
+    ref_img_data = data.get('ref_img')
+    target_img_data = data.get('target_img')
     user_id = data.get('user_id', 'anonymous')
-    
-    # Ambil nama model dari request, gunakan default jika tidak ada
     detector = data.get('detector_backend', 'opencv')
     model = data.get('model_name', 'VGG-Face')
 
-    # (Opsional) Validasi apakah model didukung
+    if not ref_img_data or not target_img_data:
+        return jsonify({"error": "Missing image data"}), 400
+    
+    ref_img_data = ref_img_data.split(',')[-1]
+    target_img_data = target_img_data.split(',')[-1]
+
     if detector not in SUPPORTED_DETECTORS:
         return jsonify({"error": f"Detector model '{detector}' not supported."}), 400
     if model not in SUPPORTED_MODELS:
         return jsonify({"error": f"Recognition model '{model}' not supported."}), 400
 
-    ref_img_bytes = base64.b64decode(ref_img_data)
-    target_img_bytes = base64.b64decode(target_img_data)
-
-    ref_arr = np.frombuffer(ref_img_bytes, np.uint8)
-    target_arr = np.frombuffer(target_img_bytes, np.uint8)
-
-    ref_img = cv2.imdecode(ref_arr, cv2.IMREAD_COLOR)
-    target_img = cv2.imdecode(target_arr, cv2.IMREAD_COLOR)
-
-    ref_file = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
-    tgt_file = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
-
+    temp_files_to_remove = []
     try:
-        ref_file.close()
-        tgt_file.close()
+        ref_img_bytes = base64.b64decode(ref_img_data)
+        target_img_bytes = base64.b64decode(target_img_data)
 
-        cv2.imwrite(ref_file.name, ref_img)
-        cv2.imwrite(tgt_file.name, target_img)
+        ref_arr = np.frombuffer(ref_img_bytes, np.uint8)
+        target_arr = np.frombuffer(target_img_bytes, np.uint8)
 
-        # Gunakan model yang dipilih dalam DeepFace.verify
+        ref_img = cv2.imdecode(ref_arr, cv2.IMREAD_COLOR)
+        target_img = cv2.imdecode(target_arr, cv2.IMREAD_COLOR)
+
+        if ref_img is None or target_img is None:
+            return jsonify({"error": "Could not decode one or both images"}), 400
+
+        ref_file_path = None
+        tgt_file_path = None
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as ref_temp_file:
+            cv2.imwrite(ref_temp_file.name, ref_img)
+            ref_file_path = ref_temp_file.name
+            temp_files_to_remove.append(ref_file_path)
+        
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tgt_temp_file:
+            cv2.imwrite(tgt_temp_file.name, target_img)
+            tgt_file_path = tgt_temp_file.name
+            temp_files_to_remove.append(tgt_file_path)
+
         result = DeepFace.verify(
-            ref_file.name, 
-            tgt_file.name, 
+            img1_path=ref_file_path, 
+            img2_path=tgt_file_path, 
             enforce_detection=False,
-            detector_backend=detector, # Gunakan model detektor yang dipilih
-            model_name=model           # Gunakan model pengenalan yang dipilih
+            detector_backend=detector,
+            model_name=model
         )
+        
+        # Contoh penyimpanan ke Firestore (pastikan 'db' sudah diinisialisasi)
+        # try:
+        #     db.collection("face_matches").add({
+        #         "user": user_id,
+        #         "distance": result.get('distance'),
+        #         "verified": result.get('verified'),
+        #         "detector": detector,
+        #         "model": model,
+        #         "type": "static_match"
+        #     })
+        # except Exception as e:
+        #     app.logger.error(f"Firestore error: {e}")
 
-        db.collection("face_matches").add({
-            "user": user_id,
-            "distance": result['distance'],
-            "verified": result['verified'],
-            "detector": detector, # Simpan model yang digunakan
-            "model": model        # Simpan model yang digunakan
-        })
 
         return jsonify(result)
 
+    except base64.binascii.Error:
+        return jsonify({"error": "Invalid base64 string"}), 400
     except Exception as e:
+        app.logger.error(f"Error in /match: {e}")
         return jsonify({"error": str(e)}), 500
-
     finally:
-        os.remove(ref_file.name)
-        os.remove(tgt_file.name)
+        for f_path in temp_files_to_remove:
+            if os.path.exists(f_path):
+                os.remove(f_path)
 
 @app.route("/upload", methods=["POST"])
 def upload_ref():
@@ -93,8 +122,89 @@ def upload_ref():
         return jsonify({"error": "No file part"}), 400
     
     ref_file = request.files['file']
-    ref_file.save("reference_temp.jpg")
-    return jsonify({"message": "Reference image uploaded successfully"}), 200
+    if ref_file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+    
+    try:
+        # Simpan sebagai REFERENCE_IMAGE_PATH
+        ref_file.save(REFERENCE_IMAGE_PATH)
+        app.logger.info(f"Reference image saved to {REFERENCE_IMAGE_PATH}")
+        return jsonify({"message": "Reference image uploaded successfully"}), 200
+    except Exception as e:
+        app.logger.error(f"Error saving reference image: {e}")
+        return jsonify({"error": f"Could not save reference image: {str(e)}"}), 500
+
+@app.route("/realtime_verify", methods=["POST"])
+def realtime_verify():
+    data = request.get_json()
+    if not data:
+        return jsonify({"error": "Invalid JSON payload"}), 400
+
+    frame_data_url = data.get('frame_data')
+    detector = data.get('detector_backend', 'opencv')
+    model = data.get('model_name', 'VGG-Face')
+
+    if not frame_data_url:
+        return jsonify({"error": "Missing frame_data"}), 400
+
+    if not os.path.exists(REFERENCE_IMAGE_PATH):
+        app.logger.error(f"Reference image not found at {REFERENCE_IMAGE_PATH}")
+        return jsonify({"error": "Reference image not uploaded or found. Please upload one first."}), 400
+
+    if detector not in SUPPORTED_DETECTORS:
+        return jsonify({"error": f"Detector model '{detector}' not supported."}), 400
+    if model not in SUPPORTED_MODELS:
+        return jsonify({"error": f"Recognition model '{model}' not supported."}), 400
+
+    temp_frame_file_path = None
+    try:
+        # Decode frame dari data URL
+        frame_b64_data = frame_data_url.split(',')[-1]
+        frame_bytes = base64.b64decode(frame_b64_data)
+        frame_arr = np.frombuffer(frame_bytes, np.uint8)
+        current_frame_img = cv2.imdecode(frame_arr, cv2.IMREAD_COLOR)
+
+        if current_frame_img is None:
+            return jsonify({"error": "Could not decode frame image"}), 400
+
+        # Simpan frame sementara
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_frame_file:
+            cv2.imwrite(temp_frame_file.name, current_frame_img)
+            temp_frame_file_path = temp_frame_file.name
+        
+        app.logger.info(f"Verifying: Ref='{REFERENCE_IMAGE_PATH}', Target='{temp_frame_file_path}', Detector='{detector}', Model='{model}'")
+        
+        result = DeepFace.verify(
+            img1_path=REFERENCE_IMAGE_PATH, 
+            img2_path=temp_frame_file_path, 
+            enforce_detection=False,
+            detector_backend=detector,
+            model_name=model
+        )
+        
+        # Contoh penyimpanan ke Firestore (pastikan 'db' sudah diinisialisasi)
+        # try:
+        #     db.collection("face_matches").add({
+        #         "user": "realtime_user", # atau user_id jika ada
+        #         "distance": result.get('distance'),
+        #         "verified": result.get('verified'),
+        #         "detector": detector,
+        #         "model": model,
+        #         "type": "realtime_match"
+        #     })
+        # except Exception as e:
+        #     app.logger.error(f"Firestore error (realtime): {e}")
+
+        return jsonify(result)
+
+    except base64.binascii.Error:
+        return jsonify({"error": "Invalid base64 string for frame_data"}), 400
+    except Exception as e:
+        app.logger.error(f"Error in /realtime_verify: {e}")
+        return jsonify({"error": str(e)}), 500
+    finally:
+        if temp_frame_file_path and os.path.exists(temp_frame_file_path):
+            os.remove(temp_frame_file_path)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000) # Jalankan di port 5000

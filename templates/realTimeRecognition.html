@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebSocket Face Stream</title>
+    <title>Real-time Face Verification</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; padding: 20px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 700px; margin: auto; background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #0d47a1; text-align: center; margin-bottom: 20px;}
+        video, img#preview { 
+            border: 2px solid #0d47a1; 
+            margin-bottom: 15px; 
+            border-radius: 6px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #e0e0e0; /* Placeholder background */
+        }
+        img#preview { max-width: 320px; max-height: 240px; }
+        .controls, .model-selection, .upload-section { margin-bottom: 20px; text-align: center; }
+        button, select, input[type="file"] { 
+            padding: 10px 18px; 
+            margin: 5px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        button { background-color: #0d47a1; color: white; border-color: #0d47a1; }
+        button:hover { background-color: #1565c0; }
+        button:disabled { background-color: #aaa; cursor: not-allowed; }
+        select { min-width: 150px; }
+        label { margin-right: 10px; font-weight: 600; }
+        #result { 
+            font-weight: bold; 
+            text-align: center; 
+            padding: 15px; 
+            border-radius: 5px; 
+            background-color: #e3f2fd; 
+            border: 1px solid #0d47a1;
+            margin-top: 20px;
+        }
+        .upload-section p { margin-bottom: 8px; font-weight: bold;}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>camera Face Matching</h2>
-    <video id="video" width="320" height="240" autoplay></video>
-    <button id="start">Start Stream</button>
-    <button id="stop">Stop Stream</button>
-    <button onclick="triggerMatch()">Face Match</button>
+    <div class="container">
+        <h2>Verifikasi Wajah Real-time (HTTP)</h2>
+        
+        <video id="video" width="320" height="240" autoplay muted playsinline></video>
+        
+        <div class="controls">
+            <button id="start">Mulai Kamera</button>
+            <button id="stop">Hentikan Kamera</button>
+            <button id="matchButton">Cocokkan Wajah Sekarang</button> </div>
 
-    <p>Upload Reference Image:</p>
-    <input type="file" id="uploadRef" accept="image/*" >
-    <h3>Preview:</h3>
-    <img id="preview" alt="Uploaded Image" style="max-width: 300px; max-height: 300px; display: none;">
+        <div class="upload-section">
+            <p>Unggah Gambar Referensi:</p>
+            <input type="file" id="uploadRef" accept="image/*" >
+            <h3>Pratinjau Referensi:</h3>
+            <img id="preview" alt="Pratinjau Gambar Referensi" style="display: none;">
+        </div>
 
-    <p id="result"></p>
+        <div class="model-selection">
+            <div>
+                <label for="detector-model-rt">Model Detektor:</label>
+                <select id="detector-model-rt">
+                    <option value="opencv" selected>OpenCV</option>
+                    <option value="ssd">SSD</option>
+                    <option value="dlib">Dlib</option>
+                    <option value="mtcnn">MTCNN</option>
+                    <option value="retinaface">RetinaFace</option>
+                    <option value="mediapipe">MediaPipe</option>
+                    <option value="yolov8">YOLOv8</option>
+                    <option value="yunet">YuNet</option>
+                </select>
+            </div>
+            <div style="margin-top:10px;">
+                <label for="recognition-model-rt">Model Pengenalan:</label>
+                <select id="recognition-model-rt">
+                    <option value="VGG-Face" selected>VGG-Face</option>
+                    <option value="Facenet">Facenet</option>
+                    <option value="Facenet512">Facenet512</option>
+                    <option value="OpenFace">OpenFace</option>
+                    <option value="DeepFace">DeepFace</option>
+                    <option value="ArcFace">ArcFace</option>
+                    <option value="Dlib">Dlib</option>
+                    <option value="SFace">SFace</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="result">Status: Menunggu tindakan...</div>
+    </div>
 
     <script src="/static/realTimeRecognition.js"></script>
 </body>
