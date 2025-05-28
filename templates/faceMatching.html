@@ -1,24 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face Matching</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face Matching App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #0d47a1;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="file"] {
+      padding: 0.5rem;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: #0d47a1;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #1565c0;
+    }
+    pre {
+      background: #f1f1f1;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Face Matching App</h1>
+  <h1>Face Matching App</h1>
 
-    <p>Upload Reference Image:</p>
-    <input type="file" accept="image/*" id="ref-input">
+  <div class="card">
+    <div>
+      <label for="ref-input">Upload Reference Image:</label><br />
+      <input type="file" accept="image/*" id="ref-input">
+    </div>
 
-    <p>Upload Target Image:</p>
-    <input type="file" accept="image/*" id="target-input">
+    <div>
+      <label for="target-input">Upload Target Image:</label><br />
+      <input type="file" accept="image/*" id="target-input">
+    </div>
 
     <button onclick="sendImages()">Match Faces</button>
 
-    <h3>Result:</h3>
-    <pre id="result"></pre>
+    <div>
+      <label>Result:</label>
+      <pre id="result">Waiting for input...</pre>
+    </div>
+  </div>
 
-    <script src="/static/faceMatching.js"></script>
+  <script src="/static/faceMatching.js"></script>
 </body>
 </html>
