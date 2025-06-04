@@ -1,8 +1,39 @@
+const refPreviewImage = document.getElementById("ref-preview");
+const targetPreviewImage = document.getElementById("target-preview");
+
+document.getElementById("ref-input").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      refPreviewImage.src = e.target.result;
+      refPreviewImage.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  } else {
+    refPreviewImage.style.display = "none";
+  }
+});
+
+document.getElementById("target-input").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      targetPreviewImage.src = e.target.result;
+      targetPreviewImage.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  } else {
+    targetPreviewImage.style.display = "none";
+  }
+});
+
 async function sendImages() {
-  const refInput = document.getElementById("ref-input").files[0];
-  const targetInput = document.getElementById("target-input").files[0];
   const detectorModel = document.getElementById("detector-model").value; // Get detector model
   const recognitionModel = document.getElementById("recognition-model").value; // Get recognition model
+  const refInput = document.getElementById("ref-input").files[0];
+  const targetInput = document.getElementById("target-input").files[0];
 
   if (!refInput || !targetInput) {
     alert("Please select both images.");
