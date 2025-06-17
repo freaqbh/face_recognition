@@ -1,0 +1,387 @@
+2025-06-18 03:01:00,734 - INFO - Benchmark initialized with test data: benchmark_data\test_images
+2025-06-18 03:01:00,736 - INFO - Results will be saved to: benchmark_results\full_benchmark_20251806_ 30035
+2025-06-18 03:01:00,736 - INFO - Starting comprehensive benchmark with 8 detectors and 9 models
+2025-06-18 03:01:00,736 - INFO - Preparing test data...
+2025-06-18 03:01:00,743 - INFO - Created 5 genuine pairs and 3 impostor pairs
+2025-06-18 03:01:00,744 - INFO - Progress: 1/72
+2025-06-18 03:01:00,744 - INFO - Benchmarking opencv + VGG-Face
+2025-06-18 03:02:26,946 - INFO - Progress: 2/72
+2025-06-18 03:02:26,965 - INFO - Benchmarking opencv + Facenet
+2025-06-18 03:02:38,137 - INFO - Progress: 3/72
+2025-06-18 03:02:38,140 - INFO - Benchmarking opencv + Facenet512
+2025-06-18 03:02:47,909 - INFO - Progress: 4/72
+2025-06-18 03:02:47,913 - INFO - Benchmarking opencv + OpenFace
+2025-06-18 03:03:00,701 - INFO - Progress: 5/72
+2025-06-18 03:03:00,708 - INFO - Benchmarking opencv + DeepFace
+2025-06-18 03:03:00,721 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,729 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,736 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,743 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,751 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,758 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,764 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,772 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:03:00,775 - INFO - Progress: 6/72
+2025-06-18 03:03:00,776 - INFO - Benchmarking opencv + DeepID
+2025-06-18 03:03:09,000 - INFO - Progress: 7/72
+2025-06-18 03:03:09,000 - INFO - Benchmarking opencv + ArcFace
+2025-06-18 03:03:32,419 - INFO - Progress: 8/72
+2025-06-18 03:03:32,425 - INFO - Benchmarking opencv + Dlib
+2025-06-18 03:03:45,073 - INFO - Progress: 9/72
+2025-06-18 03:03:45,073 - INFO - Benchmarking opencv + SFace
+2025-06-18 03:03:57,100 - INFO - Progress: 10/72
+2025-06-18 03:03:57,102 - INFO - Benchmarking ssd + VGG-Face
+2025-06-18 03:04:04,333 - INFO - Progress: 11/72
+2025-06-18 03:04:04,338 - INFO - Benchmarking ssd + Facenet
+2025-06-18 03:04:11,489 - INFO - Progress: 12/72
+2025-06-18 03:04:11,491 - INFO - Benchmarking ssd + Facenet512
+2025-06-18 03:04:17,680 - INFO - Progress: 13/72
+2025-06-18 03:04:17,681 - INFO - Benchmarking ssd + OpenFace
+2025-06-18 03:04:21,766 - INFO - Progress: 14/72
+2025-06-18 03:04:21,766 - INFO - Benchmarking ssd + DeepFace
+2025-06-18 03:04:21,772 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,780 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,786 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,795 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,802 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,810 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,817 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,823 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:04:21,827 - INFO - Progress: 15/72
+2025-06-18 03:04:21,827 - INFO - Benchmarking ssd + DeepID
+2025-06-18 03:04:24,894 - INFO - Progress: 16/72
+2025-06-18 03:04:24,894 - INFO - Benchmarking ssd + ArcFace
+2025-06-18 03:04:30,910 - INFO - Progress: 17/72
+2025-06-18 03:04:30,910 - INFO - Benchmarking ssd + Dlib
+2025-06-18 03:04:39,993 - INFO - Progress: 18/72
+2025-06-18 03:04:39,994 - INFO - Benchmarking ssd + SFace
+2025-06-18 03:04:43,170 - INFO - Progress: 19/72
+2025-06-18 03:04:43,170 - INFO - Benchmarking dlib + VGG-Face
+2025-06-18 03:12:08,555 - INFO - Progress: 20/72
+2025-06-18 03:12:08,572 - INFO - Benchmarking dlib + Facenet
+2025-06-18 03:16:40,498 - INFO - Progress: 21/72
+2025-06-18 03:16:40,513 - INFO - Benchmarking dlib + Facenet512
+2025-06-18 03:21:18,859 - INFO - Progress: 22/72
+2025-06-18 03:21:18,882 - INFO - Benchmarking dlib + OpenFace
+2025-06-18 03:26:02,491 - INFO - Progress: 23/72
+2025-06-18 03:26:02,511 - INFO - Benchmarking dlib + DeepFace
+2025-06-18 03:26:02,534 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,540 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,546 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,552 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,557 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,563 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,568 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,574 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:26:02,578 - INFO - Progress: 24/72
+2025-06-18 03:26:02,578 - INFO - Benchmarking dlib + DeepID
+2025-06-18 03:31:14,674 - INFO - Progress: 25/72
+2025-06-18 03:31:14,713 - INFO - Benchmarking dlib + ArcFace
+2025-06-18 03:36:37,211 - INFO - Progress: 26/72
+2025-06-18 03:36:37,225 - INFO - Benchmarking dlib + Dlib
+2025-06-18 03:41:01,822 - INFO - Progress: 27/72
+2025-06-18 03:41:01,838 - INFO - Benchmarking dlib + SFace
+2025-06-18 03:45:42,662 - INFO - Progress: 28/72
+2025-06-18 03:45:42,678 - INFO - Benchmarking mtcnn + VGG-Face
+2025-06-18 03:50:07,980 - WARNING - Error processing pair 1: Exception encountered when calling layer 'prelu1' (type PReLU).
+
+{{function_node __wrapped__Neg_device_/job:localhost/replica:0/task:0/device:CPU:0}} OOM when allocating tensor with shape[1,4798,7198,10] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator mklcpu [Op:Neg] name: 
+
+Call arguments received by layer 'prelu1' (type PReLU):
+  • inputs=tf.Tensor(shape=(1, 4798, 7198, 10), dtype=float32)
+2025-06-18 03:50:10,201 - WARNING - Error processing pair 2: OpenCV(4.11.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 72000000 bytes in function 'cv::OutOfMemoryError'
+
+2025-06-18 03:50:11,297 - WARNING - Error processing pair 3: Unable to allocate 84.4 MiB for an array with shape (1, 1440, 2560, 3) and data type float64
+2025-06-18 03:50:12,333 - WARNING - Error processing pair 4: Unable to allocate 84.4 MiB for an array with shape (1, 1440, 2560, 3) and data type float64
+2025-06-18 03:50:18,899 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:20,743 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:23,431 - INFO - Progress: 29/72
+2025-06-18 03:50:23,431 - INFO - Benchmarking mtcnn + Facenet
+2025-06-18 03:50:25,097 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:26,850 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:38,777 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:40,470 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:42,954 - INFO - Progress: 30/72
+2025-06-18 03:50:42,955 - INFO - Benchmarking mtcnn + Facenet512
+2025-06-18 03:50:44,566 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:46,244 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:57,274 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:50:58,964 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:01,664 - INFO - Progress: 31/72
+2025-06-18 03:51:01,665 - INFO - Benchmarking mtcnn + OpenFace
+2025-06-18 03:51:03,292 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:04,997 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:14,305 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:15,972 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:17,995 - INFO - Progress: 32/72
+2025-06-18 03:51:17,996 - INFO - Benchmarking mtcnn + DeepFace
+2025-06-18 03:51:18,003 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,010 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,017 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,023 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,029 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,036 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,048 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,054 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 03:51:18,061 - INFO - Progress: 33/72
+2025-06-18 03:51:18,061 - INFO - Benchmarking mtcnn + DeepID
+2025-06-18 03:51:19,689 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:21,415 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:29,660 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:31,385 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:33,204 - INFO - Progress: 34/72
+2025-06-18 03:51:33,205 - INFO - Benchmarking mtcnn + ArcFace
+2025-06-18 03:51:34,905 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:36,576 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:46,967 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:48,654 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:50,975 - INFO - Progress: 35/72
+2025-06-18 03:51:50,976 - INFO - Benchmarking mtcnn + Dlib
+2025-06-18 03:51:52,601 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:51:54,326 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:08,176 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:09,854 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:13,167 - INFO - Progress: 36/72
+2025-06-18 03:52:13,167 - INFO - Benchmarking mtcnn + SFace
+2025-06-18 03:52:14,804 - WARNING - Error processing pair 1: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:16,503 - WARNING - Error processing pair 2: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:25,032 - WARNING - Error processing pair 6: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:26,738 - WARNING - Error processing pair 7: Unable to allocate 2.15 GiB for an array with shape (1, 8000, 12000, 3) and data type float64
+2025-06-18 03:52:28,609 - INFO - Progress: 37/72
+2025-06-18 03:52:28,609 - INFO - Benchmarking retinaface + VGG-Face
+2025-06-18 03:55:32,460 - INFO - Progress: 38/72
+2025-06-18 03:55:32,480 - INFO - Benchmarking retinaface + Facenet
+2025-06-18 03:58:12,413 - INFO - Progress: 39/72
+2025-06-18 03:58:12,429 - INFO - Benchmarking retinaface + Facenet512
+2025-06-18 04:00:53,651 - INFO - Progress: 40/72
+2025-06-18 04:00:53,667 - INFO - Benchmarking retinaface + OpenFace
+2025-06-18 04:03:31,693 - INFO - Progress: 41/72
+2025-06-18 04:03:31,709 - INFO - Benchmarking retinaface + DeepFace
+2025-06-18 04:03:31,732 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,738 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,743 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,749 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,754 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,760 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,767 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,772 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:03:31,779 - INFO - Progress: 42/72
+2025-06-18 04:03:31,779 - INFO - Benchmarking retinaface + DeepID
+2025-06-18 04:06:05,506 - INFO - Progress: 43/72
+2025-06-18 04:06:05,527 - INFO - Benchmarking retinaface + ArcFace
+2025-06-18 04:08:44,420 - INFO - Progress: 44/72
+2025-06-18 04:08:44,435 - INFO - Benchmarking retinaface + Dlib
+2025-06-18 04:11:30,679 - INFO - Progress: 45/72
+2025-06-18 04:11:30,699 - INFO - Benchmarking retinaface + SFace
+2025-06-18 04:14:02,009 - INFO - Progress: 46/72
+2025-06-18 04:14:02,024 - INFO - Benchmarking mediapipe + VGG-Face
+2025-06-18 04:14:02,181 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,295 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,318 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,329 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,340 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,458 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,573 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,586 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,592 - INFO - Progress: 47/72
+2025-06-18 04:14:02,592 - INFO - Benchmarking mediapipe + Facenet
+2025-06-18 04:14:02,707 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,821 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,834 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,844 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,853 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:02,966 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,079 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,094 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,100 - INFO - Progress: 48/72
+2025-06-18 04:14:03,100 - INFO - Benchmarking mediapipe + Facenet512
+2025-06-18 04:14:03,212 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,326 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,342 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,352 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,363 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,476 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,591 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,603 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,611 - INFO - Progress: 49/72
+2025-06-18 04:14:03,611 - INFO - Benchmarking mediapipe + OpenFace
+2025-06-18 04:14:03,723 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,837 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,851 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,862 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,871 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:03,983 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,097 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,110 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,115 - INFO - Progress: 50/72
+2025-06-18 04:14:04,116 - INFO - Benchmarking mediapipe + DeepFace
+2025-06-18 04:14:04,123 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,128 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,135 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,140 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,147 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,152 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,159 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,165 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:04,172 - INFO - Progress: 51/72
+2025-06-18 04:14:04,172 - INFO - Benchmarking mediapipe + DeepID
+2025-06-18 04:14:04,299 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,415 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,429 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,441 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,451 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,563 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,679 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,693 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,700 - INFO - Progress: 52/72
+2025-06-18 04:14:04,700 - INFO - Benchmarking mediapipe + ArcFace
+2025-06-18 04:14:04,814 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,930 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,943 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,955 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:04,964 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,077 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,192 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,205 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,220 - INFO - Progress: 53/72
+2025-06-18 04:14:05,220 - INFO - Benchmarking mediapipe + Dlib
+2025-06-18 04:14:05,332 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,447 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,460 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,470 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,480 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,591 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,706 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,731 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,738 - INFO - Progress: 54/72
+2025-06-18 04:14:05,738 - INFO - Benchmarking mediapipe + SFace
+2025-06-18 04:14:05,850 - WARNING - Error processing pair 1: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,964 - WARNING - Error processing pair 2: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,979 - WARNING - Error processing pair 3: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:05,989 - WARNING - Error processing pair 4: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:06,000 - WARNING - Error processing pair 5: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:06,111 - WARNING - Error processing pair 6: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:06,225 - WARNING - Error processing pair 7: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:06,247 - WARNING - Error processing pair 8: MediaPipe is an optional detector, ensure the library is installed. Please install using 'pip install mediapipe'
+2025-06-18 04:14:06,254 - INFO - Progress: 55/72
+2025-06-18 04:14:06,254 - INFO - Benchmarking yolov8 + VGG-Face
+2025-06-18 04:14:06,380 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,497 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,511 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,521 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,531 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,644 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,759 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,773 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:06,780 - INFO - Progress: 56/72
+2025-06-18 04:14:06,780 - INFO - Benchmarking yolov8 + Facenet
+2025-06-18 04:14:06,891 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,006 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,022 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,033 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,045 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,163 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,278 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,291 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,296 - INFO - Progress: 57/72
+2025-06-18 04:14:07,297 - INFO - Benchmarking yolov8 + Facenet512
+2025-06-18 04:14:07,422 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,544 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,558 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,569 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,579 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,693 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,808 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,821 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:07,828 - INFO - Progress: 58/72
+2025-06-18 04:14:07,828 - INFO - Benchmarking yolov8 + OpenFace
+2025-06-18 04:14:07,941 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,056 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,069 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,080 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,090 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,203 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,327 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,341 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,347 - INFO - Progress: 59/72
+2025-06-18 04:14:08,347 - INFO - Benchmarking yolov8 + DeepFace
+2025-06-18 04:14:08,355 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,361 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,367 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,375 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,382 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,389 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,396 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,401 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:14:08,408 - INFO - Progress: 60/72
+2025-06-18 04:14:08,408 - INFO - Benchmarking yolov8 + DeepID
+2025-06-18 04:14:08,521 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,638 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,652 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,663 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,674 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,787 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,901 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,913 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:08,921 - INFO - Progress: 61/72
+2025-06-18 04:14:08,921 - INFO - Benchmarking yolov8 + ArcFace
+2025-06-18 04:14:09,036 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,152 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,166 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,176 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,186 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,299 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,415 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,428 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,434 - INFO - Progress: 62/72
+2025-06-18 04:14:09,434 - INFO - Benchmarking yolov8 + Dlib
+2025-06-18 04:14:09,554 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,668 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,682 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,693 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,703 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,820 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,935 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,948 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:09,955 - INFO - Progress: 63/72
+2025-06-18 04:14:09,956 - INFO - Benchmarking yolov8 + SFace
+2025-06-18 04:14:10,067 - WARNING - Error processing pair 1: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,182 - WARNING - Error processing pair 2: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,197 - WARNING - Error processing pair 3: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,207 - WARNING - Error processing pair 4: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,218 - WARNING - Error processing pair 5: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,331 - WARNING - Error processing pair 6: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,446 - WARNING - Error processing pair 7: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,458 - WARNING - Error processing pair 8: Yolo is an optional detector, ensure the library is installed. Please install using 'pip install ultralytics'
+2025-06-18 04:14:10,464 - INFO - Progress: 64/72
+2025-06-18 04:14:10,465 - INFO - Benchmarking yunet + VGG-Face
+2025-06-18 04:14:42,569 - INFO - Progress: 65/72
+2025-06-18 04:14:42,587 - INFO - Benchmarking yunet + Facenet
+2025-06-18 04:15:09,241 - INFO - Progress: 66/72
+2025-06-18 04:15:09,249 - INFO - Benchmarking yunet + Facenet512
+2025-06-18 04:15:35,305 - INFO - Progress: 67/72
+2025-06-18 04:15:35,305 - INFO - Benchmarking yunet + OpenFace
+2025-06-18 04:15:59,496 - INFO - Progress: 68/72
+2025-06-18 04:15:59,505 - INFO - Benchmarking yunet + DeepFace
+2025-06-18 04:15:59,512 - WARNING - Error processing pair 1: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,518 - WARNING - Error processing pair 2: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,524 - WARNING - Error processing pair 3: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,530 - WARNING - Error processing pair 4: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,537 - WARNING - Error processing pair 5: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,544 - WARNING - Error processing pair 6: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,550 - WARNING - Error processing pair 7: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,556 - WARNING - Error processing pair 8: DeepFace model requires LocallyConnected2D but it is no longer supported after tf 2.12 but you have 2.19. You need to downgrade your tf.
+2025-06-18 04:15:59,563 - INFO - Progress: 69/72
+2025-06-18 04:15:59,563 - INFO - Benchmarking yunet + DeepID
+2025-06-18 04:16:22,827 - INFO - Progress: 70/72
+2025-06-18 04:16:22,827 - INFO - Benchmarking yunet + ArcFace
+2025-06-18 04:16:49,091 - INFO - Progress: 71/72
+2025-06-18 04:16:49,099 - INFO - Benchmarking yunet + Dlib
+2025-06-18 04:17:19,278 - INFO - Progress: 72/72
+2025-06-18 04:17:19,297 - INFO - Benchmarking yunet + SFace
+2025-06-18 04:17:44,007 - INFO - Benchmark completed. Generating reports...
+2025-06-18 04:17:44,236 - INFO - CSV summary saved
+2025-06-18 04:17:50,269 - INFO - Visualizations saved
+2025-06-18 04:17:50,275 - INFO - Markdown report generated
+2025-06-18 04:17:50,275 - INFO - Reports generated in benchmark_results\full_benchmark_20251806_ 30035
+2025-06-18 04:17:50,275 - INFO - Benchmark completed successfully!
